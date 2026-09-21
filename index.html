@@ -1,296 +1,1463 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Skillence Academy - Practical computer courses, AI tools, video editing, Tally with GST and CSC Advance training in Pelawal, Hazaribagh." />
-  <title>Skillence Academy | Learn Skills. Build Tomorrow.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Skillence Academy | Nisar - Founder & Mentor</title>
+  <meta name="description"
+    content="Skillence Academy in Hazaribagh, Jharkhand. Practical computer courses, career confidence, and hands-on learning with Founder Nisar.">
+  <link rel="stylesheet" href="style.css?v=10.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@500;600&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="Skillence Academy home">
-        <img src="assets/skillence-logo.png" alt="Skillence Academy" />
+
+  <!-- ==========================================
+       LAYER 3: NAVBAR (Single-Page In-Page Navigation)
+       ========================================== -->
+  <header class="site-header" id="site-header">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" aria-label="Skillence Academy Home">
+        <img src="assets/skillence_logo.png" alt="Skillence Academy" class="nav-logo-img">
       </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#courses">Courses</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#contact">Enquire Now</a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#courses" class="nav-link">Courses</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-hire">Contact Us <span class="arrow">↗</span></a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Practical Learning • Career Focused</span>
-          <h1>Learn Skills That <span>Build Your Tomorrow</span></h1>
-          <p>Job-ready computer training with practical projects, AI tools, career guidance and personal attention at Skillence Academy, Pelawal, Hazaribagh.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#courses">Explore Courses</a>
-            <a class="btn btn-secondary" href="#contact">Book Free Counselling</a>
+  <!-- ==========================================
+       LAYER 1: SCROLL-BASED 3D FRAME ANIMATION (CANVAS)
+       LAYER 2: DARK GRADIENT OVERLAY FOR READABILITY
+       ========================================== -->
+  <div class="canvas-container" id="canvas-container" aria-hidden="true">
+    <canvas id="frame-canvas"></canvas>
+    <div class="canvas-ambient-gradient"></div>
+  </div>
+
+  <!-- Minimal Elegant Preloader -->
+  <div class="loader-overlay" id="loader" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+    <div class="loader-content">
+      <div class="loader-title">
+        <img src="assets/skillence_logo.png" alt="Skillence Academy" class="loader-logo-img">
+      </div>
+      <div class="loader-bar-bg">
+        <div class="loader-bar" id="loader-bar"></div>
+      </div>
+      <div class="loader-status" id="loader-status">0%</div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       LAYER 3: CONTINUOUS SINGLE-PAGE MAIN CONTENT
+       ========================================== -->
+  <main class="single-page-main">
+
+    <!-- 1. HERO / SCROLL-BASED FOUNDER ANIMATION (#home) -->
+    <section class="hero-section" id="home">
+      <div class="hero-sticky-viewport">
+        <div class="hero-grid">
+
+          <!-- Hero Left Side (45%): All Text, Badges, Buttons, Course Icons -->
+          <div class="hero-text-col">
+            <div class="badge hero-badge">FOUNDER OF SKILLENCE ACADEMY</div>
+            <h1 class="hero-headline">
+              Hi, I'm <span class="text-gradient">Nisar</span><br>
+              I Build Skills for Real Careers.
+            </h1>
+            <p class="hero-subtext">
+              I'm the founder of Skillence Academy, focused on helping students build practical computer skills, career
+              confidence, and a growth mindset through hands-on learning.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#courses" class="btn btn-primary">Explore Courses <span class="arrow">↗</span></a>
+              <a href="#contact" class="btn btn-outline">
+                Contact Us
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Course / Skill Icon Row -->
+            <div class="hero-tech-strip">
+              <span class="tech-strip-label">COURSES & SKILLS WE TEACH</span>
+              <div class="tech-icons-row">
+                <!-- ADCA+ -->
+                <div class="tech-icon-pill" title="ADCA+ with AI">
+                  <span class="tech-badge-text color-adca">ADCA+</span>
+                </div>
+                <!-- Tally -->
+                <div class="tech-icon-pill" title="Tally with GST">
+                  <span class="tech-badge-text color-tally">Tally</span>
+                </div>
+                <!-- Video Editing -->
+                <div class="tech-icon-pill" title="Video Editing">
+                  <span class="tech-badge-text color-video">Edit</span>
+                </div>
+                <!-- AI Tools -->
+                <div class="tech-icon-pill" title="AI Tools">
+                  <span class="tech-badge-text color-ai">AI</span>
+                </div>
+                <!-- MS Office -->
+                <div class="tech-icon-pill" title="MS Office">
+                  <span class="tech-badge-text color-office">Office</span>
+                </div>
+                <!-- Premiere Pro -->
+                <div class="tech-icon-pill" title="Adobe Premiere Pro">
+                  <span class="tech-badge-text color-pr">Pr</span>
+                </div>
+                <!-- After Effects -->
+                <div class="tech-icon-pill" title="Adobe After Effects">
+                  <span class="tech-badge-text color-ae">Ae</span>
+                </div>
+                <!-- Photoshop -->
+                <div class="tech-icon-pill" title="Adobe Photoshop">
+                  <span class="tech-badge-text color-ps">Ps</span>
+                </div>
+                <!-- CorelDRAW -->
+                <div class="tech-icon-pill" title="CorelDRAW">
+                  <span class="tech-badge-text color-corel">CDR</span>
+                </div>
+                <!-- Canva -->
+                <div class="tech-icon-pill" title="Canva">
+                  <span class="tech-badge-text color-canva">Canva</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="hero-points">
-            <div><strong>70%</strong><span>Practical Training</span></div>
-            <div><strong>Small</strong><span>Focused Batches</span></div>
-            <div><strong>AI</strong><span>Tools Included</span></div>
+
+          <!-- Hero Right Side (55%): Clear viewing area for the animated founder portrait -->
+          <!-- NO TEXT, NO CARDS, NO BADGES OVER NISAR'S FACE -->
+          <div class="hero-portrait-col" aria-hidden="true">
+            <!-- Intentionally open so Layer 1's animated portrait shines through unobstructed -->
           </div>
+
         </div>
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <span class="status-dot"></span>
-            <span>Skillence Academy</span>
+
+        <!-- Scroll Cue Indicator -->
+        <div class="scroll-cue" id="scroll-cue">
+          <div class="scroll-cue-mouse">
+            <div class="scroll-cue-wheel"></div>
           </div>
-          <div class="hero-card-body">
-            <p class="code-label">YOUR CAREER ROADMAP</p>
-            <h2>Learn → Practice → Build → Grow</h2>
-            <ul>
-              <li>Industry-relevant software</li>
-              <li>Projects & assignments</li>
-              <li>Interview preparation</li>
-              <li>Job, freelancing & startup guidance</li>
-            </ul>
+          <span class="scroll-cue-label">SCROLL TO EXPLORE</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. ABOUT SECTION (#about) -->
+    <section class="section about-section" id="about">
+      <div class="section-container">
+        <div class="about-grid">
+
+          <!-- Left Info Column -->
+          <div class="about-info-col">
+            <div class="badge">ABOUT ME</div>
+            <h2 class="section-title">I'm Passionate About Building Skills, Confidence & Careers.</h2>
+            <p class="section-desc">
+              Through Skillence Academy, my goal is to help students move beyond theory and develop practical skills
+              they can use for jobs, freelancing, business and real-world opportunities.
+            </p>
+            <p class="section-desc mindset-line">
+              Learn practically. Build confidence. Keep growing.
+            </p>
+            <a href="#contact" class="btn btn-outline">
+              Learn More About Us
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </a>
           </div>
-          <div class="orbit orbit-one">AI</div>
-          <div class="orbit orbit-two">Pr</div>
-          <div class="orbit orbit-three">Excel</div>
+
+          <!-- Right Stats Grid (Meaningful Academy Information) -->
+          <div class="about-stats-grid">
+            <!-- Card 1: 70% Practical Learning -->
+            <div class="stat-card about-feature-card">
+              <div class="about-card-image">
+                <img src="assets/about_practical_learning.png"
+                  alt="70% Practical Learning - Hands-on computer training at Skillence Academy" loading="lazy">
+              </div>
+              <div class="about-card-content">
+                <div class="stat-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                  </svg>
+                </div>
+                <div class="stat-number">70%</div>
+                <div class="stat-label">Practical Learning</div>
+              </div>
+            </div>
+
+            <!-- Card 2: Small Batches -->
+            <div class="stat-card about-feature-card">
+              <div class="about-card-image">
+                <img src="assets/about_small_batches.png"
+                  alt="Small Batches with Personal Attention at Skillence Academy" loading="lazy">
+              </div>
+              <div class="about-card-content">
+                <div class="stat-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </div>
+                <div class="stat-number">Small Batches</div>
+                <div class="stat-label">Personal Attention</div>
+              </div>
+            </div>
+
+            <!-- Card 3: Career Support -->
+            <div class="stat-card about-feature-card">
+              <div class="about-card-image">
+                <img src="assets/about_career_support.png"
+                  alt="Career Support - Interview and Freelancing Guidance at Skillence Academy" loading="lazy">
+              </div>
+              <div class="about-card-content">
+                <div class="stat-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                </div>
+                <div class="stat-number">Career Support</div>
+                <div class="stat-label">Interview & Freelancing Guidance</div>
+              </div>
+            </div>
+
+            <!-- Card 4: Certificate -->
+            <div class="stat-card about-feature-card">
+              <div class="about-card-image">
+                <img src="assets/about_certificate.png"
+                  alt="Official Certificate provided after course completion at Skillence Academy" loading="lazy">
+              </div>
+              <div class="about-card-content">
+                <div class="stat-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="8" r="7" />
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                  </svg>
+                </div>
+                <div class="stat-number">Certificate</div>
+                <div class="stat-label">Provided After Course Completion</div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="container about-grid">
-        <div>
-          <span class="section-kicker">About Us</span>
-          <h2>Practical computer education with a clear career direction.</h2>
-        </div>
-        <div class="about-copy">
-          <p>Skillence Academy helps students build real computer skills through hands-on practice, project work and modern AI tools. Our goal is not only course completion, but helping students become capable enough to move toward a job, freelancing or self-employment.</p>
-          <div class="about-tags">
-            <span>Personal Attention</span>
-            <span>Practical Tasks</span>
-            <span>Career Support</span>
-            <span>Course Certificate</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- 3. COURSES SECTION (#courses) -->
     <section class="section courses-section" id="courses">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="section-kicker">Our Courses</span>
-            <h2>Choose the skill you want to master.</h2>
+      <div class="section-container">
+        <div class="section-header-center">
+          <div class="badge">OUR COURSES</div>
+          <h2 class="section-title">Professional Courses</h2>
+          <p class="section-subheading">Learn practical skills for jobs, freelancing and real-world work.</p>
+        </div>
+
+        <div class="courses-grid">
+          <!-- Course Card 01: ADCA+ with AI -->
+          <div class="course-card">
+            <!-- Left Side: Course Information -->
+            <div class="course-card-left">
+              <div class="course-card-top">
+                <span class="course-badge">Course 01</span>
+                <span class="course-duration">6 Months</span>
+              </div>
+              <h3 class="course-title">ADCA+ with AI</h3>
+              <p class="course-desc">MS Office, Typing, DTP, Canva and practical AI tools.</p>
+              <div class="course-meta-row">
+                <span class="duration-badge">⏱ Duration: 6 Months</span>
+                <a href="#contact" class="course-action-link">Inquire Now <span class="arrow">↗</span></a>
+              </div>
+            </div>
+
+            <!-- Right Side: Floating Software Logos -->
+            <div class="course-card-right" aria-hidden="true">
+              <div class="floating-logos-canvas">
+                <!-- MS Word (Large) -->
+                <div class="logo-float logo-lg logo-primary"
+                  style="--float-delay: 0s; --float-duration: 5s; top: 8%; left: 6%;" title="Microsoft Word">
+                  <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="6" fill="#185ABD" />
+                    <rect x="12" y="6" width="16" height="20" rx="3" fill="#2B7CD3" />
+                    <path d="M15 10h10M15 14h10M15 18h7M15 22h9" stroke="#FFF" stroke-width="1.5" stroke-linecap="round"
+                      opacity="0.6" />
+                    <rect x="4" y="8" width="14" height="16" rx="3.5" fill="#103F91" />
+                    <path d="M7 13l2.2 7h1.6l1.7-5.5 1.7 5.5h1.6l2.2-7h-1.8l-1.3 4.8-1.5-4.8H13l-1.5 4.8-1.3-4.8H7z"
+                      fill="#FFF" />
+                  </svg>
+                </div>
+
+                <!-- MS Excel (Large) -->
+                <div class="logo-float logo-lg logo-primary"
+                  style="--float-delay: 1.1s; --float-duration: 5.5s; top: 48%; right: 6%;" title="Microsoft Excel">
+                  <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="6" fill="#107C41" />
+                    <rect x="12" y="6" width="16" height="20" rx="3" fill="#21A366" />
+                    <path d="M16 10v12M20 10v12M12 14h16M12 18h16" stroke="#FFF" stroke-width="1.2" opacity="0.5" />
+                    <rect x="4" y="8" width="14" height="16" rx="3.5" fill="#0E5C2F" />
+                    <path d="M8 13l2.4 3.5-2.4 3.5h2l1.5-2.4 1.5 2.4h2L12.6 16.5 15 13h-2l-1.5 2.4L10 13H8z"
+                      fill="#FFF" />
+                  </svg>
+                </div>
+
+                <!-- PowerPoint (Medium) -->
+                <div class="logo-float logo-md" style="--float-delay: 0.6s; --float-duration: 6s; top: 6%; right: 8%;"
+                  title="Microsoft PowerPoint">
+                  <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="6" fill="#C43E1C" />
+                    <rect x="12" y="6" width="16" height="20" rx="3" fill="#D24726" />
+                    <circle cx="20" cy="16" r="6" stroke="#FFF" stroke-width="1.5" stroke-dasharray="24 14"
+                      opacity="0.6" />
+                    <rect x="4" y="8" width="14" height="16" rx="3.5" fill="#9E2A0E" />
+                    <path
+                      d="M8.5 13H12c1.7 0 2.8.9 2.8 2.3 0 1.5-1.1 2.3-2.8 2.3h-1.7V20H8.5V13zm1.8 3.1h1.5c.7 0 1.2-.3 1.2-.8s-.5-.8-1.2-.8h-1.5v1.6z"
+                      fill="#FFF" />
+                  </svg>
+                </div>
+
+                <!-- Adobe Photoshop (Medium) -->
+                <div class="logo-float logo-md"
+                  style="--float-delay: 1.8s; --float-duration: 4.8s; bottom: 8%; left: 8%;" title="Adobe Photoshop">
+                  <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="6" fill="#001E36" stroke="#31A8FF"
+                      stroke-width="1.5" />
+                    <text x="7" y="21" fill="#31A8FF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800"
+                      font-size="13.5" letter-spacing="-0.5">Ps</text>
+                  </svg>
+                </div>
+
+                <!-- CorelDRAW (Medium) -->
+                <div class="logo-float logo-md"
+                  style="--float-delay: 2.3s; --float-duration: 6.2s; top: 34%; left: 38%;" title="CorelDRAW">
+                  <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="6" fill="#0F381E" stroke="#22C55E"
+                      stroke-width="1.2" />
+                    <path
+                      d="M16 6c-5 0-9 4-9 9 0 6 6 11 9 11s9-5 9-11c0-5-4-9-9-9zm0 3c3.5 0 6.5 2.8 6.5 6.2 0 4-4 8-6.5 8s-6.5-4-6.5-8c0-3.4 3-6.2 6.5-6.2z"
+                      fill="#22C55E" opacity="0.8" />
+                    <text x="6" y="20.5" fill="#4ADE80" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800"
+                      font-size="8.5">CDR</text>
+                  </svg>
+                </div>
+
+                <!-- HTML5 (Small) -->
+                <div class="logo-float logo-sm"
+                  style="--float-delay: 0.9s; --float-duration: 5.2s; bottom: 10%; left: 45%;" title="HTML5">
+                  <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+                    <path d="M5 3l2.5 24.5L16 30l8.5-2.5L27 3H5z" fill="#E44D26" />
+                    <path d="M16 5.5v22l6.5-2 2-20H16z" fill="#F16529" />
+                    <path
+                      d="M16 11h-6l.3 3.5h5.7v-3.5zm0 7.2l-3.3-.9-.2-2.3H9l.4 4.5 6.6 1.8v-3.1zm0-7.2h6l-.6 6.8-5.4 1.5v-3.1l3-.8.3-2.9H16V11z"
+                      fill="#FFF" />
+                  </svg>
+                </div>
+
+                <!-- CSS3 (Small) -->
+                <div class="logo-float logo-sm" style="--float-delay: 1.5s; --float-duration: 5.8s; top: 48%; left: 4%;"
+                  title="CSS3">
+                  <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+                    <path d="M5 3l2.5 24.5L16 30l8.5-2.5L27 3H5z" fill="#264DE4" />
+                    <path d="M16 5.5v22l6.5-2 2-20H16z" fill="#2965F1" />
+                    <path
+                      d="M16 11h-6l.3 3.5h5.7v-3.5zm0 7.2l-3.3-.9-.2-2.3H9l.4 4.5 6.6 1.8v-3.1zm0-7.2h6l-.3 3.5H16V11zm0 5.2h4.5l-.4 4.5-4.1 1.1v-3.1l2-.5.2-2H16v0z"
+                      fill="#FFF" />
+                  </svg>
+                </div>
+
+                <!-- PageMaker (Small) -->
+                <div class="logo-float logo-sm"
+                  style="--float-delay: 2.7s; --float-duration: 4.6s; bottom: 8%; right: 10%;" title="PageMaker">
+                  <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="6" fill="#3B1142" stroke="#C084FC"
+                      stroke-width="1.2" />
+                    <text x="6" y="21" fill="#E879F9" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800"
+                      font-size="12">Pm</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
-          <p>Each course combines structured learning, practical work and modern tools.</p>
-        </div>
 
-        <div class="course-grid">
-          <article class="course-card">
-            <div class="course-info">
-              <span class="course-no">01</span>
-              <h3>ADCA+ with AI</h3>
-              <p>6 Months</p>
-              <ul>
-                <li>Office & productivity tools</li>
-                <li>DTP & design basics</li>
-                <li>HTML, CSS & AI tools</li>
-              </ul>
-              <a href="#contact">Know More →</a>
+          <!-- Course Card 02: Tally with GST -->
+          <div class="course-card">
+            <!-- Left Side: Course Information -->
+            <div class="course-card-left">
+              <div class="course-card-top">
+                <span class="course-badge">Course 02</span>
+                <span class="course-duration">3 Months + 1 Mo. Practical</span>
+              </div>
+              <h3 class="course-title">Tally with GST</h3>
+              <p class="course-desc">Accounting, Billing, GST and practical business accounting.</p>
+              <div class="course-meta-row">
+                <span class="duration-badge">⏱ 3 Months + 1 Month Practical</span>
+                <a href="#contact" class="course-action-link">Inquire Now <span class="arrow">↗</span></a>
+              </div>
             </div>
-            <div class="logo-cloud" aria-label="ADCA software">
-              <img class="float f1" src="https://cdn.simpleicons.org/microsoftword/2B579A" alt="MS Word">
-              <img class="float f2" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="MS Excel">
-              <img class="float f3" src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML">
-              <img class="float f4" src="https://cdn.simpleicons.org/css/663399" alt="CSS">
-              <img class="float f5" src="https://cdn.simpleicons.org/microsoftpowerpoint/B7472A" alt="PowerPoint">
-              <span class="float text-logo f6">PM</span>
-              <span class="float text-logo f7">CDR</span>
-              <img class="float f8" src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" alt="Photoshop">
-            </div>
-          </article>
 
-          <article class="course-card">
-            <div class="course-info">
-              <span class="course-no">02</span>
-              <h3>Tally with GST</h3>
-              <p>3 Months + 1 Month Practical</p>
-              <ul>
-                <li>Accounting workflow</li>
-                <li>GST concepts & practice</li>
-                <li>Business transactions</li>
-              </ul>
-              <a href="#contact">Know More →</a>
-            </div>
-            <div class="logo-cloud" aria-label="Tally software">
-              <span class="float text-logo large f1">Tally<br>Prime</span>
-              <span class="float text-logo large f4">Tally<br>9</span>
-            </div>
-          </article>
+            <!-- Right Side: Floating Software Logos -->
+            <div class="course-card-right" aria-hidden="true">
+              <div class="floating-logos-canvas">
+                <!-- Tally Prime (Large - Main Focus) -->
+                <div class="logo-float logo-lg logo-primary"
+                  style="--float-delay: 0s; --float-duration: 4.8s; top: 14%; left: 14%; width: 64px; height: 64px;"
+                  title="Tally Prime">
+                  <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+                    <rect x="2" y="2" width="32" height="32" rx="8" fill="#001830" stroke="#0084FF"
+                      stroke-width="1.5" />
+                    <path d="M10 11h16v4.5h-5.5V26h-5V15.5H10V11z" fill="#FFC72C" />
+                    <path d="M22 17l4.5 4.5-4.5 4.5" stroke="#00C0FF" stroke-width="2.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <text x="7.5" y="31.5" fill="#E2E8F0" font-family="'Plus Jakarta Sans', sans-serif"
+                      font-weight="800" font-size="6">PRIME</text>
+                  </svg>
+                </div>
 
-          <article class="course-card">
-            <div class="course-info">
-              <span class="course-no">03</span>
-              <h3>Video Editing</h3>
-              <p>8 Months</p>
-              <ul>
-                <li>Professional editing workflow</li>
-                <li>Motion graphics & effects</li>
-                <li>AI-assisted content creation</li>
-              </ul>
-              <a href="#contact">Know More →</a>
-            </div>
-            <div class="logo-cloud" aria-label="Video editing software">
-              <img class="float f1" src="https://cdn.simpleicons.org/adobepremierepro/9999FF" alt="Premiere Pro">
-              <img class="float f3" src="https://cdn.simpleicons.org/adobeaftereffects/9999FF" alt="After Effects">
-              <img class="float f5" src="https://cdn.simpleicons.org/claude/D97757" alt="Claude">
-              <span class="float text-logo large f7">Higgs<br>field</span>
-            </div>
-          </article>
+                <!-- Tally ERP 9 (Large - Main Focus) -->
+                <div class="logo-float logo-lg logo-primary"
+                  style="--float-delay: 1.2s; --float-duration: 5.4s; bottom: 14%; right: 14%; width: 62px; height: 62px;"
+                  title="Tally ERP 9">
+                  <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+                    <rect x="2" y="2" width="32" height="32" rx="8" fill="#082018" stroke="#10B981"
+                      stroke-width="1.5" />
+                    <path d="M10 11h16v4.5h-5.5V26h-5V15.5H10V11z" fill="#F59E0B" />
+                    <text x="7.5" y="31.5" fill="#34D399" font-family="'Plus Jakarta Sans', sans-serif"
+                      font-weight="800" font-size="6">ERP 9</text>
+                  </svg>
+                </div>
 
-          <article class="course-card">
-            <div class="course-info">
-              <span class="course-no">04</span>
-              <h3>CSC Advance</h3>
-              <p>1 Year</p>
-              <ul>
-                <li>Digital & document services</li>
-                <li>Online form workflows</li>
-                <li>Practical service-center skills</li>
-              </ul>
-              <a href="#contact">Know More →</a>
-            </div>
-            <div class="logo-cloud" aria-label="CSC services">
-              <span class="float service-logo f1">PAN</span>
-              <span class="float service-logo f3">VOTER ID</span>
-              <span class="float service-logo f5">RESUME</span>
-              <span class="float service-logo f7">ONLINE<br>FORM</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+                <!-- GST Badge (Secondary Decorative) -->
+                <div class="logo-float logo-sm" style="--float-delay: 0.6s; --float-duration: 6s; top: 12%; right: 12%;"
+                  title="GST Accounting">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <rect x="2" y="3" width="20" height="18" rx="4" fill="rgba(139, 92, 246, 0.2)" stroke="#A78BFA"
+                      stroke-width="1.5" />
+                    <text x="4" y="15.5" fill="#DDD6FE" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800"
+                      font-size="7.5">GST</text>
+                  </svg>
+                </div>
 
-    <section class="section skills" id="skills">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="section-kicker">Learning System</span>
-            <h2>More practice. Less passive theory.</h2>
+                <!-- Invoice (Secondary Decorative) -->
+                <div class="logo-float logo-sm"
+                  style="--float-delay: 1.8s; --float-duration: 5.2s; top: 50%; left: 44%;" title="Invoicing & Billing">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="8" y1="13" x2="16" y2="13"></line>
+                    <line x1="8" y1="17" x2="13" y2="17"></line>
+                  </svg>
+                </div>
+
+                <!-- Calculator (Secondary Decorative) -->
+                <div class="logo-float logo-sm"
+                  style="--float-delay: 2.4s; --float-duration: 6.5s; bottom: 12%; left: 10%;"
+                  title="Accounting Calculations">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="3"></rect>
+                    <line x1="8" y1="6" x2="16" y2="6"></line>
+                    <line x1="8" y1="10" x2="8.01" y2="10"></line>
+                    <line x1="12" y1="10" x2="12.01" y2="10"></line>
+                    <line x1="16" y1="10" x2="16.01" y2="10"></line>
+                    <line x1="8" y1="14" x2="8.01" y2="14"></line>
+                    <line x1="12" y1="14" x2="12.01" y2="14"></line>
+                    <line x1="16" y1="14" x2="16.01" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Card 03: Advance Video Editing -->
+          <div class="course-card">
+            <!-- Left Side: Course Information -->
+            <div class="course-card-left">
+              <div class="course-card-top">
+                <span class="course-badge">Course 03</span>
+                <span class="course-duration">8 Months</span>
+              </div>
+              <h3 class="course-title">Advance Video Editing</h3>
+              <p class="course-desc">Adobe Premiere Pro, After Effects and practical editing projects.</p>
+              <div class="course-meta-row">
+                <span class="duration-badge">⏱ Duration: 8 Months</span>
+                <a href="#contact" class="course-action-link">Inquire Now <span class="arrow">↗</span></a>
+              </div>
+            </div>
+
+            <!-- Right Side: Floating Software Logos -->
+            <div class="course-card-right" aria-hidden="true">
+              <div class="floating-logos-canvas">
+                <!-- Premiere Pro (Large - Main Focus) -->
+                <div class="logo-float logo-lg logo-primary"
+                  style="--float-delay: 0s; --float-duration: 5s; top: 14%; left: 14%; width: 62px; height: 62px;"
+                  title="Adobe Premiere Pro">
+                  <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+                    <rect x="2" y="2" width="32" height="32" rx="8" fill="#00005B" stroke="#9999FF"
+                      stroke-width="1.5" />
+                    <text x="8" y="24.5" fill="#EA77FF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800"
+                      font-size="16.5" letter-spacing="-0.5">Pr</text>
+                  </svg>
+                </div>
+
+                <!-- After Effects (Large - Main Focus) -->
+                <div class="logo-float logo-lg logo-primary"
+                  style="--float-delay: 1.4s; --float-duration: 5.6s; bottom: 14%; right: 14%; width: 62px; height: 62px;"
+                  title="Adobe After Effects">
+                  <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+                    <rect x="2" y="2" width="32" height="32" rx="8" fill="#00005B" stroke="#9999FF"
+                      stroke-width="1.5" />
+                    <text x="7" y="24.5" fill="#9999FF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800"
+                      font-size="16.5" letter-spacing="-0.5">Ae</text>
+                  </svg>
+                </div>
+
+                <!-- Claude AI (Medium - Secondary) -->
+                <div class="logo-float logo-md"
+                  style="--float-delay: 0.8s; --float-duration: 5.2s; top: 12%; right: 12%;" title="Claude AI">
+                  <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="6" fill="#241410" stroke="#D97757"
+                      stroke-width="1.2" />
+                    <path d="M16 6v20M6 16h20M8.9 8.9l14.2 14.2M23.1 8.9L8.9 23.1" stroke="#D97757" stroke-width="2.5"
+                      stroke-linecap="round" />
+                  </svg>
+                </div>
+
+                <!-- Higgsfield AI (Medium - Secondary) -->
+                <div class="logo-float logo-md"
+                  style="--float-delay: 2s; --float-duration: 6.2s; bottom: 14%; left: 10%;" title="Higgsfield AI">
+                  <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="6" fill="#180B2B" stroke="#C084FC"
+                      stroke-width="1.2" />
+                    <path d="M10 9v14M22 9v14M10 16h12" stroke="#A855F7" stroke-width="2.2" stroke-linecap="round" />
+                    <circle cx="16" cy="16" r="2.5" fill="#E879F9" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Card 04: CSC Advance -->
+          <div class="course-card">
+            <!-- Left Side: Course Information -->
+            <div class="course-card-left">
+              <div class="course-card-top">
+                <span class="course-badge">Course 04</span>
+                <span class="course-duration">1 Year</span>
+              </div>
+              <h3 class="course-title">CSC Advance</h3>
+              <p class="course-desc">Digital services, documentation and practical computer work.</p>
+              <div class="course-meta-row">
+                <span class="duration-badge">⏱ Duration: 1 Year</span>
+                <a href="#contact" class="course-action-link">Inquire Now <span class="arrow">↗</span></a>
+              </div>
+            </div>
+
+            <!-- Right Side: Floating Service Icons -->
+            <div class="course-card-right" aria-hidden="true">
+              <div class="floating-logos-canvas">
+                <!-- PAN Card -->
+                <div class="logo-float logo-service"
+                  style="--float-delay: 0s; --float-duration: 5s; top: 12%; left: 10%;" title="PAN Card Services">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                    <circle cx="8" cy="11" r="2.5"></circle>
+                    <line x1="14" y1="9" x2="19" y2="9"></line>
+                    <line x1="14" y1="13" x2="17" y2="13"></line>
+                  </svg>
+                  <span class="service-label">PAN</span>
+                </div>
+
+                <!-- Voter ID -->
+                <div class="logo-float logo-service"
+                  style="--float-delay: 1.2s; --float-duration: 5.6s; top: 12%; right: 10%;"
+                  title="Voter ID Card Services">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C084FC" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <path d="M9 15l2 2 4-4"></path>
+                  </svg>
+                  <span class="service-label">Voter ID</span>
+                </div>
+
+                <!-- Resume / CV -->
+                <div class="logo-float logo-service"
+                  style="--float-delay: 0.7s; --float-duration: 5.2s; bottom: 12%; left: 10%;"
+                  title="Resume & CV Creation">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <circle cx="10" cy="9" r="1.5"></circle>
+                    <line x1="7" y1="14" x2="13" y2="14"></line>
+                    <line x1="7" y1="17" x2="11" y2="17"></line>
+                  </svg>
+                  <span class="service-label">Resume</span>
+                </div>
+
+                <!-- Online Forms -->
+                <div class="logo-float logo-service"
+                  style="--float-delay: 1.9s; --float-duration: 6.2s; bottom: 12%; right: 10%;"
+                  title="Online Form Filling">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                    <line x1="6" y1="8" x2="14" y2="8"></line>
+                    <line x1="6" y1="12" x2="10" y2="12"></line>
+                    <circle cx="17" cy="18" r="3"></circle>
+                    <path d="M16 18l.8.8 1.4-1.4"></path>
+                  </svg>
+                  <span class="service-label">Online Forms</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="feature-grid">
-          <div class="feature"><span>01</span><h3>Learn</h3><p>Understand the concept in simple language.</p></div>
-          <div class="feature"><span>02</span><h3>Practice</h3><p>Repeat the skill with guided tasks.</p></div>
-          <div class="feature"><span>03</span><h3>Build</h3><p>Create assignments and practical projects.</p></div>
-          <div class="feature"><span>04</span><h3>Prepare</h3><p>Get career, interview and portfolio guidance.</p></div>
-        </div>
+
       </div>
     </section>
 
-    <section class="section projects" id="projects">
-      <div class="container project-panel">
-        <div>
-          <span class="section-kicker">Career Support</span>
-          <h2>Course ke baad skill ko use karna bhi seekhiye.</h2>
-          <p>Students are guided toward interview preparation, job readiness, freelancing and suitable self-employment ideas based on the skills they learn.</p>
-        </div>
-        <a class="btn btn-primary" href="#contact">Start Your Journey</a>
-      </div>
-    </section>
+    <!-- 4. SKILLS / SOFTWARE SECTION (#skills) -->
+    <section class="section skills-section" id="skills">
+      <div class="section-container">
+        <div class="skills-two-col">
 
-    <section class="section contact" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <span class="section-kicker">Get in Touch</span>
-          <h2>Admission & free counselling.</h2>
-          <p>Tell us which course you are interested in and visit the academy for batch availability and guidance.</p>
-          <div class="contact-list">
-            <a href="tel:+919060828274">📞 +91 90608 28274</a>
-            <span>📍 Near Imamul Ambiya Masjid, Gadokhar Road, Pelawal, Hazaribagh, Jharkhand</span>
+          <!-- Left Column (~38%): Founder Nisar's Portrait -->
+          <div class="skills-image-col">
+            <div class="skills-portrait-wrap">
+              <div class="skills-portrait-glow" aria-hidden="true"></div>
+              <img src="assets/nisar_skills_portrait.jpg" alt="Nisar - Founder of Skillence Academy"
+                class="skills-portrait-img" loading="lazy">
+              <div class="skills-portrait-overlay" aria-hidden="true"></div>
+            </div>
           </div>
+
+          <!-- Right Column (~62%): Content & Dual Carousels -->
+          <div class="skills-content-col">
+
+            <!-- Section Intro Block -->
+            <div class="skills-header-block">
+              <div class="badge skills-badge">MY SKILLS</div>
+              <h2 class="section-title skills-headline">Skills I Teach &amp; Work With</h2>
+              <p class="section-desc skills-desc">
+                I focus on practical computer skills that students can use in real work, jobs, freelancing and business.
+                From office productivity and accounting to professional video editing, graphic design and modern AI
+                tools, my goal is to make technology simple, practical and career-focused.
+              </p>
+              <p class="section-desc mindset-line skills-mindset">
+                Learn Practically. Build Skills. Use Technology Smarter.
+              </p>
+            </div>
+
+            <!-- ==========================================
+                 CAROUSEL 1: SOFTWARE & TOOLS
+                 ========================================== -->
+            <div class="carousel-block software-carousel-block">
+              <div class="carousel-header">
+                <h3 class="carousel-title">SOFTWARE &amp; TOOLS</h3>
+                <div class="carousel-controls" role="group" aria-label="Software carousel navigation">
+                  <button type="button" class="carousel-nav-btn" id="software-prev" aria-label="Previous software">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button type="button" class="carousel-nav-btn" id="software-next" aria-label="Next software">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="carousel-viewport" id="software-viewport" tabindex="0" aria-label="Software carousel slider">
+                <div class="carousel-track" id="software-track">
+
+                  <!-- Software 1: MS Word -->
+                  <div class="carousel-card" role="group" aria-label="MS Word">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#msWordBg)" />
+                        <rect x="8" y="10" width="22" height="28" rx="4" fill="#185ABD" stroke="#2B7CD3"
+                          stroke-width="1.2" />
+                        <path
+                          d="M13.2 19L15.6 28.5H17.8L19.4 22.8L21 28.5H23.2L25.6 19H23.5L22.1 25.5L20.5 20H18.3L16.7 25.5L15.3 19H13.2Z"
+                          fill="#FFFFFF" />
+                        <rect x="23" y="15" width="15" height="2.5" rx="1.2" fill="#93C5FD" />
+                        <rect x="23" y="20" width="15" height="2.5" rx="1.2" fill="#93C5FD" />
+                        <rect x="23" y="25" width="11" height="2.5" rx="1.2" fill="#93C5FD" />
+                        <rect x="23" y="30" width="8" height="2.5" rx="1.2" fill="#93C5FD" />
+                        <defs>
+                          <linearGradient id="msWordBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#0E284D" />
+                            <stop offset="1" stop-color="#10386E" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">MS Word</span>
+                  </div>
+
+                  <!-- Software 2: MS Excel -->
+                  <div class="carousel-card" role="group" aria-label="MS Excel">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#msExcelBg)" />
+                        <rect x="18" y="11" width="20" height="26" rx="3" fill="#107C41" fill-opacity="0.25"
+                          stroke="#107C41" stroke-width="1" />
+                        <line x1="18" y1="17.5" x2="38" y2="17.5" stroke="#107C41" stroke-width="1" />
+                        <line x1="18" y1="24" x2="38" y2="24" stroke="#107C41" stroke-width="1" />
+                        <line x1="18" y1="30.5" x2="38" y2="30.5" stroke="#107C41" stroke-width="1" />
+                        <line x1="28" y1="11" x2="28" y2="37" stroke="#107C41" stroke-width="1" />
+                        <rect x="8" y="11" width="22" height="26" rx="4" fill="#107C41" stroke="#1F9A55"
+                          stroke-width="1.2" />
+                        <path
+                          d="M14.5 18H17.2L19.8 22.5L22.5 18H25.1L21.3 23.8L25.3 29.8H22.7L19.8 25.1L17 29.8H14.4L18.4 23.8L14.5 18Z"
+                          fill="#FFFFFF" />
+                        <defs>
+                          <linearGradient id="msExcelBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#0A2A19" />
+                            <stop offset="1" stop-color="#0D3F25" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">MS Excel</span>
+                  </div>
+
+                  <!-- Software 3: PowerPoint -->
+                  <div class="carousel-card" role="group" aria-label="PowerPoint">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#msPptBg)" />
+                        <rect x="18" y="11" width="20" height="26" rx="3" fill="#C43E1C" fill-opacity="0.25"
+                          stroke="#C43E1C" stroke-width="1" />
+                        <circle cx="28" cy="24" r="6.5" stroke="#D83B01" stroke-width="1.8" fill="none" />
+                        <path d="M28 24L32.5 20.5A6.5 6.5 0 0 0 28 17.5V24Z" fill="#D83B01" />
+                        <rect x="8" y="11" width="22" height="26" rx="4" fill="#C43E1C" stroke="#E2552B"
+                          stroke-width="1.2" />
+                        <path
+                          d="M15.5 18H19.8C22.2 18 23.7 19.3 23.7 21.3C23.7 23.4 22.1 24.7 19.8 24.7H17.8V29.5H15.5V18ZM17.8 22.8H19.7C20.9 22.8 21.6 22.2 21.6 21.3C21.6 20.4 20.9 19.9 19.7 19.9H17.8V22.8Z"
+                          fill="#FFFFFF" />
+                        <defs>
+                          <linearGradient id="msPptBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#33140C" />
+                            <stop offset="1" stop-color="#4D1D12" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">PowerPoint</span>
+                  </div>
+
+                  <!-- Software 4: Tally Prime -->
+                  <div class="carousel-card" role="group" aria-label="Tally Prime">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#tallyBg)" stroke="#F59E0B" stroke-opacity="0.4"
+                          stroke-width="1" />
+                        <path d="M12 16H23V20H12V16Z" fill="#F59E0B" />
+                        <path d="M12 22H31V26H12V22Z" fill="#FBBF24" />
+                        <path d="M12 28H27V32H12V28Z" fill="#F59E0B" />
+                        <path d="M29 15L35 21L29 27" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <defs>
+                          <linearGradient id="tallyBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#1E1909" />
+                            <stop offset="1" stop-color="#2D230B" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">Tally Prime</span>
+                  </div>
+
+                  <!-- Software 5: Adobe Premiere Pro -->
+                  <div class="carousel-card" role="group" aria-label="Adobe Premiere Pro">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="#0c001c" stroke="#EA77FF" stroke-width="1.2" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#EA77FF"
+                          font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="21"
+                          letter-spacing="-0.5px">Pr</text>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">Premiere Pro</span>
+                  </div>
+
+                  <!-- Software 6: Adobe After Effects -->
+                  <div class="carousel-card" role="group" aria-label="Adobe After Effects">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="#08001c" stroke="#9999FF" stroke-width="1.2" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#9999FF"
+                          font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="21"
+                          letter-spacing="-0.5px">Ae</text>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">After Effects</span>
+                  </div>
+
+                  <!-- Software 7: Adobe Photoshop -->
+                  <div class="carousel-card" role="group" aria-label="Adobe Photoshop">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="#001426" stroke="#31A8FF" stroke-width="1.2" />
+                        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#31A8FF"
+                          font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="21"
+                          letter-spacing="-0.5px">Ps</text>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">Photoshop</span>
+                  </div>
+
+                  <!-- Software 8: CorelDRAW -->
+                  <div class="carousel-card" role="group" aria-label="CorelDRAW">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#corelBg)" stroke="#10B981" stroke-opacity="0.4"
+                          stroke-width="1" />
+                        <path
+                          d="M24 10C17.9 10 13 14.9 13 21C13 25.6 15.8 29.5 19.8 31.1L21.5 35.5C21.7 36.1 22.3 36.5 23 36.5H25C25.7 36.5 26.3 36.1 26.5 35.5L28.2 31.1C32.2 29.5 35 25.6 35 21C35 14.9 30.1 10 24 10Z"
+                          fill="url(#corelGradient)" />
+                        <circle cx="24" cy="20" r="4.2" fill="#FFFFFF" fill-opacity="0.3" />
+                        <line x1="24" y1="12" x2="24" y2="35" stroke="#047857" stroke-width="1.2" />
+                        <defs>
+                          <linearGradient id="corelBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#042F1C" />
+                            <stop offset="1" stop-color="#064E3B" />
+                          </linearGradient>
+                          <linearGradient id="corelGradient" x1="13" y1="10" x2="35" y2="36"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#34D399" />
+                            <stop offset="1" stop-color="#059669" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">CorelDRAW</span>
+                  </div>
+
+                  <!-- Software 9: Canva -->
+                  <div class="carousel-card" role="group" aria-label="Canva">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#canvaBg)" />
+                        <path
+                          d="M29.5 16.2C27.9 14.8 25.8 14 23.4 14C17.7 14 13.5 18.5 13.5 24.3C13.5 30.1 17.8 34.5 23.6 34.5C26.5 34.5 29.1 33.3 30.8 31.2L28.3 28.9C27.1 30.3 25.5 31.1 23.6 31.1C19.7 31.1 17 28.2 17 24.3C17 20.3 19.7 17.4 23.4 17.4C25.1 17.4 26.6 18 27.6 19.1L29.5 16.2Z"
+                          fill="#FFFFFF" />
+                        <defs>
+                          <linearGradient id="canvaBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#00C4CC" />
+                            <stop offset="1" stop-color="#7D2AE8" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">Canva</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- ==========================================
+                 CAROUSEL 2: AI TOOLS I WORK WITH
+                 ========================================== -->
+            <div class="carousel-block ai-carousel-block">
+              <div class="carousel-header">
+                <h3 class="carousel-title">AI TOOLS I WORK WITH</h3>
+                <div class="carousel-controls" role="group" aria-label="AI tools carousel navigation">
+                  <button type="button" class="carousel-nav-btn" id="ai-prev" aria-label="Previous AI tool">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button type="button" class="carousel-nav-btn" id="ai-next" aria-label="Next AI tool">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="carousel-viewport" id="ai-viewport" tabindex="0" aria-label="AI tools carousel slider">
+                <div class="carousel-track" id="ai-track">
+
+                  <!-- AI 1: ChatGPT -->
+                  <div class="carousel-card" role="group" aria-label="ChatGPT">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#chatgptBg)" stroke="#10A37F"
+                          stroke-opacity="0.35" stroke-width="1" />
+                        <g transform="translate(24, 24) scale(0.68) translate(-24, -24)" stroke="#10A37F"
+                          stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                          <path
+                            d="M37.5 19.7A8 8 0 0 0 36.2 13a8.2 8.2 0 0 0-8.9-3.7 8.2 8.2 0 0 0-6.1-2.7 8.2 8.2 0 0 0-7.8 5.7 8.2 8.2 0 0 0-5.2 3.8 8.2 8.2 0 0 0 .9 9.6 8.2 8.2 0 0 0-1.3 6.7 8.2 8.2 0 0 0 8.9 3.7 8.2 8.2 0 0 0 6.1 2.7 8.2 8.2 0 0 0 7.8-5.7 8.2 8.2 0 0 0 5.2-3.8 8.2 8.2 0 0 0-.9-9.6z" />
+                          <path d="M21.2 14.5l5.6 3.2v6.5l-5.6 3.2-5.6-3.2v-6.5z" />
+                          <path d="M26.8 17.7L32.4 21v6.5l-5.6 3.2" />
+                          <path d="M26.8 24.2l-5.6-3.2v-6.5" />
+                          <path d="M21.2 27.5l-5.6-3.3v-6.5" />
+                        </g>
+                        <defs>
+                          <linearGradient id="chatgptBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#07231B" />
+                            <stop offset="1" stop-color="#0A3327" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">ChatGPT</span>
+                  </div>
+
+                  <!-- AI 2: Google Gemini -->
+                  <div class="carousel-card" role="group" aria-label="Google Gemini">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#geminiBg)" stroke="#6366F1"
+                          stroke-opacity="0.35" stroke-width="1" />
+                        <path
+                          d="M24 8C24 16.8 16.8 24 8 24C16.8 24 24 31.2 24 40C24 31.2 31.2 24 40 24C31.2 24 24 16.8 24 8Z"
+                          fill="url(#geminiGradient)" />
+                        <defs>
+                          <linearGradient id="geminiBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#0E162B" />
+                            <stop offset="1" stop-color="#161B3B" />
+                          </linearGradient>
+                          <linearGradient id="geminiGradient" x1="8" y1="8" x2="40" y2="40"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4E75F8" />
+                            <stop offset="0.5" stop-color="#9B72CB" />
+                            <stop offset="1" stop-color="#F472B6" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">Google Gemini</span>
+                  </div>
+
+                  <!-- AI 3: Canva AI -->
+                  <div class="carousel-card" role="group" aria-label="Canva AI">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#canvaAiBg)" stroke="#A855F7"
+                          stroke-opacity="0.4" stroke-width="1" />
+                        <path
+                          d="M21 11C21 17.5 16.5 22 10 22C16.5 22 21 26.5 21 33C21 26.5 25.5 22 32 22C25.5 22 21 17.5 21 11Z"
+                          fill="url(#canvaAiGrad)" />
+                        <path
+                          d="M33 27C33 30.5 30.5 33 27 33C30.5 33 33 35.5 33 39C33 35.5 35.5 33 39 33C35.5 33 33 30.5 33 27Z"
+                          fill="#00C4CC" />
+                        <circle cx="33" cy="14" r="2" fill="#F472B6" />
+                        <defs>
+                          <linearGradient id="canvaAiBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#180D2E" />
+                            <stop offset="1" stop-color="#241144" />
+                          </linearGradient>
+                          <linearGradient id="canvaAiGrad" x1="10" y1="11" x2="32" y2="33"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#C084FC" />
+                            <stop offset="1" stop-color="#7D2AE8" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">Canva AI</span>
+                  </div>
+
+                  <!-- AI 4: Higgsfield AI -->
+                  <div class="carousel-card" role="group" aria-label="Higgsfield AI">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#higgsfieldBg)" stroke="#8B5CF6"
+                          stroke-opacity="0.4" stroke-width="1" />
+                        <circle cx="24" cy="24" r="13" stroke="url(#hfGrad)" stroke-width="2.2" />
+                        <path d="M17 17V31M31 17V31M17 24H31" stroke="#FFFFFF" stroke-width="2.5"
+                          stroke-linecap="round" />
+                        <circle cx="24" cy="24" r="3.5" fill="#F59E0B" />
+                        <path d="M31 12L34 9M34 12L31 9" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" />
+                        <defs>
+                          <linearGradient id="higgsfieldBg" x1="0" y1="0" x2="48" y2="48"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#1A1035" />
+                            <stop offset="1" stop-color="#26174D" />
+                          </linearGradient>
+                          <linearGradient id="hfGrad" x1="11" y1="11" x2="37" y2="37" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#A78BFA" />
+                            <stop offset="1" stop-color="#F59E0B" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">Higgsfield AI</span>
+                  </div>
+
+                  <!-- AI 5: Kling AI -->
+                  <div class="carousel-card" role="group" aria-label="Kling AI">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#klingBg)" stroke="#00F0FF" stroke-opacity="0.35"
+                          stroke-width="1" />
+                        <rect x="12" y="14" width="24" height="20" rx="4" stroke="#00F0FF" stroke-width="2"
+                          fill="none" />
+                        <path d="M12 20H36" stroke="#00F0FF" stroke-width="1.5" />
+                        <path d="M17 14L19 20M25 14L27 20M31 14L33 20" stroke="#00F0FF" stroke-width="1.5" />
+                        <polygon points="21,24 21,30 28,27" fill="#00F0FF" />
+                        <circle cx="35" cy="13" r="2" fill="#38BDF8" />
+                        <defs>
+                          <linearGradient id="klingBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#051C2C" />
+                            <stop offset="1" stop-color="#0A2C42" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">Kling AI</span>
+                  </div>
+
+                  <!-- AI 6: Runway -->
+                  <div class="carousel-card" role="group" aria-label="Runway">
+                    <div class="carousel-card-icon">
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="url(#runwayBg)" stroke="#A78BFA"
+                          stroke-opacity="0.35" stroke-width="1" />
+                        <path d="M15 15H25.5C29.1 15 32 17.9 32 21.5C32 25.1 29.1 28 25.5 28H21.5L31.5 34"
+                          stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M15 15V33" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" />
+                        <path
+                          d="M21 21.5C21 20.1 22.1 19 23.5 19H25C26.4 19 27.5 20.1 27.5 21.5C27.5 22.9 26.4 24 25 24H21V21.5Z"
+                          fill="#C084FC" />
+                        <defs>
+                          <linearGradient id="runwayBg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#141026" />
+                            <stop offset="1" stop-color="#1E193B" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span class="carousel-card-name">Runway</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
-        <form class="contact-form" action="https://formsubmit.co/usrnisaransari@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New Skillence Academy Website Enquiry">
-          <input type="hidden" name="_captcha" value="false">
-          <label>Full Name<input type="text" name="name" placeholder="Your name" required></label>
-          <label>Phone Number<input type="tel" name="phone" placeholder="Your mobile number" required></label>
-          <label>Course
-            <select name="course" required>
-              <option value="">Select a course</option>
-              <option>ADCA+ with AI</option>
-              <option>Tally with GST</option>
-              <option>Video Editing</option>
-              <option>CSC Advance</option>
-            </select>
-          </label>
-          <button class="btn btn-primary" type="submit">Send Enquiry</button>
-        </form>
       </div>
     </section>
+
+    <!-- 5. STUDENT PROJECTS SECTION (#projects) -->
+    <section class="section projects-section" id="projects">
+      <div class="section-container">
+        <div class="section-header-center">
+          <div class="badge">STUDENT WORK & PRACTICAL PROJECTS</div>
+          <h2 class="section-title">Learning Through Real Projects</h2>
+          <p class="section-subheading">Our students learn by creating actual business files, accounting books, and
+            creative media.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Office Projects -->
+          <article class="project-card">
+            <div class="project-card-image-wrap">
+              <span class="project-card-num">01</span>
+              <img src="assets/project_ecommerce.jpg" alt="Office & Business Reporting Projects" class="project-img"
+                loading="lazy">
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">Office Projects</h3>
+              <p class="project-summary">Excel / MS Office practical work: automated salary sheets, invoices, data
+                analysis, and office documentation.</p>
+              <a href="#contact" class="project-link">Inquire Course <span class="arrow">↗</span></a>
+            </div>
+          </article>
+
+          <!-- Project 2: Accounting Projects -->
+          <article class="project-card">
+            <div class="project-card-image-wrap">
+              <span class="project-card-num">02</span>
+              <img src="assets/project_taskapp.jpg" alt="Accounting & GST Practice Work" class="project-img"
+                loading="lazy">
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">Accounting Projects</h3>
+              <p class="project-summary">Tally & GST practice: real company voucher entries, multi-tier tax billing,
+                inventory management, and balance sheets.</p>
+              <a href="#contact" class="project-link">Inquire Course <span class="arrow">↗</span></a>
+            </div>
+          </article>
+
+          <!-- Project 3: Video Editing Projects -->
+          <article class="project-card">
+            <div class="project-card-image-wrap">
+              <span class="project-card-num">03</span>
+              <img src="assets/project_crypto.jpg" alt="Video Editing & Creative Projects" class="project-img"
+                loading="lazy">
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">Video Editing Projects</h3>
+              <p class="project-summary">Premiere Pro & After Effects: commercial video reels, cinematic color grading,
+                motion graphics, and YouTube cuts.</p>
+              <a href="#contact" class="project-link">Inquire Course <span class="arrow">↗</span></a>
+            </div>
+          </article>
+
+          <!-- Project 4: AI Projects -->
+          <article class="project-card">
+            <div class="project-card-image-wrap">
+              <span class="project-card-num">04</span>
+              <img src="assets/project_taskapp.jpg" alt="AI Practical Tools & Creative Projects" class="project-img"
+                loading="lazy">
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">AI Projects</h3>
+              <p class="project-summary">Practical AI tools and creative projects: AI-assisted copywriting, visual
+                generation, automated workflows, and research.</p>
+              <a href="#contact" class="project-link">Inquire Course <span class="arrow">↗</span></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Carousel Dots Indicator -->
+        <div class="projects-dots" aria-hidden="true">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. CONTACT SECTION (#contact) -->
+    <section class="section contact-section" id="contact">
+      <div class="section-container">
+        <div class="footer-top-grid">
+
+          <!-- Column 1: CTA -->
+          <div class="footer-cta-col">
+            <div class="badge">READY TO GROW?</div>
+            <h2 class="footer-cta-title">Ready to Build Your Skills?</h2>
+            <p class="footer-cta-desc">
+              Connect with Skillence Academy to learn practical computer skills, explore our courses and start building
+              a stronger career path.
+            </p>
+            <a href="tel:9060828274" class="btn btn-primary">Contact Us <span class="arrow">↗</span></a>
+          </div>
+
+          <!-- Column 2: Mission Quote Card -->
+          <div class="footer-testimonial-col">
+            <div class="testimonial-card">
+              <div class="quote-icon">“</div>
+              <blockquote class="testimonial-quote">
+                "At Skillence Academy, we don't just teach computer courses — we mentor each student to gain real
+                confidence and hands-on ability so they can build sustainable careers."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-meta">
+                  <span class="author-name">Nisar</span>
+                  <span class="author-role">Founder, Skillence Academy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Contact Details & Location -->
+          <div class="footer-social-col">
+            <div class="social-header-label">ACADEMY DETAILS</div>
+
+            <div class="contact-info-list">
+              <div class="contact-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span><strong>Skillence Academy</strong></span>
+              </div>
+              <div class="contact-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Pelawal / Gadokhar Road<br>Hazaribagh, Jharkhand</span>
+              </div>
+              <a href="tel:9060828274" class="contact-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span><strong>9060828274</strong></span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- 7. FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-top">
-      <div class="footer-brand">
-        <img src="assets/skillence-logo.png" alt="Skillence Academy" />
-        <p>Learn today. Build tomorrow.</p>
+    <div class="section-container">
+
+      <!-- Top Branding Header -->
+      <div class="footer-brand-header">
+        <a href="#home" class="footer-brand" aria-label="Skillence Academy Home">
+          <img src="assets/skillence_logo.png" alt="Skillence Academy" class="footer-logo-img">
+        </a>
+        <p class="footer-brand-tagline">
+          Empowering students &amp; professionals through practical computer education, modern tools, and career mentorship.
+        </p>
       </div>
 
-      <div class="footer-div">
-        <h3>Quick Links</h3>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#courses">Courses</a>
-        <a href="#contact">Contact</a>
+      <!-- 3-Column Footer Grid: Left Quick Links | Center Our Courses | Right Get in Touch -->
+      <div class="footer-3col-grid">
+
+        <!-- 1. LEFT DIV: Quick Links -->
+        <div class="footer-col footer-col-links">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home"><span class="footer-link-arrow">›</span> Home</a></li>
+            <li><a href="#about"><span class="footer-link-arrow">›</span> About Founder</a></li>
+            <li><a href="#courses"><span class="footer-link-arrow">›</span> Our Courses</a></li>
+            <li><a href="#skills"><span class="footer-link-arrow">›</span> Skills &amp; Tools</a></li>
+            <li><a href="#projects"><span class="footer-link-arrow">›</span> Student Work</a></li>
+            <li><a href="#contact"><span class="footer-link-arrow">›</span> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- 2. CENTER DIV: Our Courses -->
+        <div class="footer-col footer-col-courses">
+          <h4 class="footer-heading">Our Courses</h4>
+          <ul class="footer-links-list">
+            <li><a href="#courses"><span class="footer-link-bullet">⚡</span> ADCA+ with AI</a></li>
+            <li><a href="#courses"><span class="footer-link-bullet">⚡</span> Tally with GST</a></li>
+            <li><a href="#courses"><span class="footer-link-bullet">⚡</span> Advance Video Editing</a></li>
+            <li><a href="#courses"><span class="footer-link-bullet">⚡</span> CSC Advance</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. RIGHT DIV: Get in Touch -->
+        <div class="footer-col footer-col-contact">
+          <h4 class="footer-heading">Get in Touch</h4>
+
+          <div class="footer-contact-items">
+            <!-- Phone / WhatsApp -->
+            <a href="tel:9060828274" class="footer-contact-entry" aria-label="Call or WhatsApp Skillence Academy">
+              <div class="footer-contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div class="footer-contact-text">
+                <span class="contact-label-small">Call / WhatsApp</span>
+                <span class="contact-value-highlight">9060828274</span>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:connectskillence@gmail.com" class="footer-contact-entry" aria-label="Email Skillence Academy">
+              <div class="footer-contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div class="footer-contact-text">
+                <span class="contact-label-small">Email Us</span>
+                <span class="contact-value-highlight">connectskillence@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- Address -->
+            <div class="footer-contact-entry">
+              <div class="footer-contact-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div class="footer-contact-text">
+                <span class="contact-label-small">Academy Location</span>
+                <span class="contact-value-address">Gadokhar Road, Pelawal, Hazaribagh, Jharkhand</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="footer-div">
-        <h3>Our Courses</h3>
-        <a href="#courses">ADCA+ with AI</a>
-        <a href="#courses">Tally with GST</a>
-        <a href="#courses">Video Editing</a>
-        <a href="#courses">CSC Advance</a>
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <span class="copyright-text">© 2025–2026 Skillence Academy. All rights reserved.</span>
+        <span class="credit-text">Founder &amp; Mentor: Nisar • Pelawal, Hazaribag</span>
       </div>
 
-      <div class="footer-div">
-        <h3>Get in Touch</h3>
-        <a href="tel:+919060828274">+91 90608 28274</a>
-        <span>Near Imamul Ambiya Masjid</span>
-        <span>Gadokhar Road, Pelawal</span>
-        <span>Hazaribagh, Jharkhand</span>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© 2026 Skillence Academy. All rights reserved.</span>
-      <span>Founder: Md Nisar Ansari</span>
     </div>
   </footer>
 
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.main-nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
-  </script>
+  <!-- ==========================================
+       LEAD FORM MODAL / POPUP
+       ========================================== -->
+  <div class="lead-modal-backdrop" id="lead-modal-backdrop" role="presentation" aria-hidden="true">
+    <div class="lead-modal-container" id="lead-modal" role="dialog" aria-modal="true"
+      aria-labelledby="lead-modal-title">
+
+      <!-- Close Button -->
+      <button type="button" class="lead-modal-close" id="lead-modal-close" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Form View -->
+      <div class="lead-modal-body" id="lead-form-view">
+        <div class="lead-modal-header">
+          <h3 class="lead-modal-title" id="lead-modal-title">Book Free Counselling</h3>
+          <p class="lead-modal-subtitle">Fill in your details and our team will contact you soon.</p>
+        </div>
+
+        <!-- Global Server Error Alert -->
+        <div class="lead-error-banner" id="lead-global-error" role="alert" style="display: none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          <span id="lead-global-error-text">Something went wrong. Please try again.</span>
+        </div>
+
+        <form class="lead-form" id="lead-form" novalidate>
+          <!-- Field 1: Full Name -->
+          <div class="lead-form-group">
+            <label for="lead-fullname" class="lead-form-label">Full Name <span class="required-star">*</span></label>
+            <input type="text" id="lead-fullname" name="fullName" class="lead-form-input"
+              placeholder="Enter your full name" autocomplete="name" required>
+            <div class="lead-field-error" id="error-lead-fullname"></div>
+          </div>
+
+          <!-- Field 2: Phone Number -->
+          <div class="lead-form-group">
+            <label for="lead-phone" class="lead-form-label">Phone Number <span class="required-star">*</span></label>
+            <div class="lead-phone-wrapper">
+              <span class="lead-phone-prefix">+91</span>
+              <input type="tel" id="lead-phone" name="phone" class="lead-form-input lead-input-phone"
+                placeholder="Enter your 10 digit phone number" maxlength="10" inputmode="numeric" autocomplete="tel"
+                required>
+            </div>
+            <div class="lead-field-error" id="error-lead-phone"></div>
+          </div>
+
+          <!-- Field 3: Email -->
+          <div class="lead-form-group">
+            <label for="lead-email" class="lead-form-label">Email <span class="required-star">*</span></label>
+            <input type="email" id="lead-email" name="email" class="lead-form-input"
+              placeholder="Enter your email address" autocomplete="email" required>
+            <div class="lead-field-error" id="error-lead-email"></div>
+          </div>
+
+          <!-- Field 4: Select Course -->
+          <div class="lead-form-group">
+            <label for="lead-course" class="lead-form-label">Select Course <span class="required-star">*</span></label>
+            <div class="lead-select-wrapper">
+              <select id="lead-course" name="course" class="lead-form-select" required>
+                <option value="" disabled selected>Select a course</option>
+                <option value="ADCA with AI">ADCA with AI</option>
+                <option value="Tally with GST">Tally with GST</option>
+                <option value="Video Editing">Video Editing</option>
+                <option value="CSC Advance">CSC Advance</option>
+              </select>
+              <span class="lead-select-arrow">▼</span>
+            </div>
+            <div class="lead-field-error" id="error-lead-course"></div>
+          </div>
+
+          <!-- Field 5: City / Location -->
+          <div class="lead-form-group">
+            <label for="lead-location" class="lead-form-label">City / Location <span
+                class="required-star">*</span></label>
+            <input type="text" id="lead-location" name="location" class="lead-form-input"
+              placeholder="Enter your city or location" autocomplete="address-level2" required>
+            <div class="lead-field-error" id="error-lead-location"></div>
+          </div>
+
+          <!-- Field 6: Message (Optional) -->
+          <div class="lead-form-group">
+            <label for="lead-message" class="lead-form-label">Message (Optional)</label>
+            <textarea id="lead-message" name="message" class="lead-form-textarea" rows="3"
+              placeholder="Tell us anything..."></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary lead-submit-btn" id="lead-submit-btn">
+            <span class="lead-btn-text">Submit Your Details <span class="arrow">↗</span></span>
+            <span class="lead-btn-spinner" id="lead-btn-spinner" aria-hidden="true" style="display: none;">
+              <svg class="spinner-svg" viewBox="0 0 50 50">
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+              </svg>
+              <span>Submitting...</span>
+            </span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Success View (Hidden by default) -->
+      <div class="lead-modal-success" id="lead-success-view" style="display: none;">
+        <div class="success-icon-circle">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="success-title">✓ Details Submitted Successfully</h3>
+        <p class="success-desc">Thank you! Our Skillence Academy team will contact you soon.</p>
+        <button type="button" class="btn btn-primary lead-close-success-btn" id="lead-close-success-btn">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="main.js?v=5.0"></script>
 </body>
+
 </html>

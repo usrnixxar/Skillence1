@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[user]
+	name = Nisar
+	email = connectskillence@gmail.com
+[remote "origin"]
+	url = https://github.com/usrnixxar/Skillence1.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
